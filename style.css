@@ -1061,3 +1061,74 @@ img {
         min-height: 300px;
     }
 }
+
+/* ===== FORCE ALL PORTFOLIO VISUAL IMAGES TO FIT ===== */
+
+.visual,
+.visual-section,
+.visual-card,
+.image-strip,
+.cybersecurity-section,
+.pentesting-section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.visual img,
+.visual-section img,
+.visual-card img,
+.image-strip img,
+.cybersecurity-section img,
+.pentesting-section img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+/* Keep image sections from becoming extremely tall */
+.visual,
+.visual-section,
+.visual-card {
+    max-height: 420px;
+}
+
+/* Two-image strip */
+.image-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.image-strip img {
+    height: 260px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .visual,
+    .visual-section,
+    .visual-card {
+        max-height: none;
+    }
+
+    .visual img,
+    .visual-section img,
+    .visual-card img,
+    .image-strip img,
+    .cybersecurity-section img,
+    .pentesting-section img {
+        width: 100% !important;
+        height: 240px !important;
+    }
+
+    .image-strip {
+        grid-template-columns: 1fr;
+    }
+}
